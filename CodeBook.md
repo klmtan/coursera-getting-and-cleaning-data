@@ -148,4 +148,21 @@ It is also composed of the time based and frequency based variables.
 
 
 ## Transformations
+After the dataset was downloaded 
+Here the following transformations
 
+1. The activity labels and features were read using the loadData function
+2. The columns of the data frame activitylabels and features were given column names for easier manipulation
+3. The training and test data were also read using the loadData function.
+4. The training subject, training x (values) and training y (activity) were merged using cbind (column bind)
+5. The test subject, test x (values) and test y (values) were merged using cbind (column bind)
+6. The results of the cbinds of the training and test dataframes were then now merged using rbind (row bind)
+7. The wanted columns are only those of means and standard deviations.
+8. The merged dataset was also given appropriate columns.
+9. The means and standard deviations were selected using regular expressions.
+10. The column names that has the features of mean and standard deviation were selected
+	* further cleaning was done. All the () were removed
+	* the f was replaced by frequency
+	* the t was replaced by time
+	* mean was replaced by Mean
+	* std was replaced by Standard_Deviation
