@@ -84,4 +84,4 @@ colnames(mergeSet) <- mergeSetColumns
 mergeSet2 <- mergeSet %>% group_by(subject,activity) %>% summarise_all(funs(mean))
 
 ### creating tidy_data.txt removes the column names and quotes
-write.table(mergeSet2,"tidy_data.txt",col.names = FALSE, quote = FALSE)
+write.table(mergeSet2,"tidy_data.txt",row.names = FALSE, quote = FALSE)
