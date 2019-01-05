@@ -1,6 +1,6 @@
 
 ### Created by: Katherine Loren Tan
-### January 05, 2019
+### January 06, 2019
 
 
 ### Download the file 
@@ -20,8 +20,6 @@ loadData <- function(filename){
 	dataset <- read.table(filename)
 }
 
-
-
 fileUrl <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
 filename <- 'data.zip'
 
@@ -29,8 +27,6 @@ filename <- 'data.zip'
 getData(fileUrl,filename)
 
 ### READING THE DATA
-
-
 ### Reads activity labels
 activityLabels <- loadData('UCI HAR Dataset/activity_labels.txt')
 activityLabels[,2] <- as.character(activityLabels[,2])
