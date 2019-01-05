@@ -10,9 +10,6 @@ library(dplyr)
 
 
 getData <- function(fileUrl,filename){
-	if(!file.exists("./data")){
-		dir.create('./data')
-	}
 	download.file(fileUrl,filename,method="curl")
 	unzip(filename)
 }
@@ -26,7 +23,7 @@ loadData <- function(filename){
 
 
 fileUrl <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
-filename <- './data/data.zip'
+filename <- 'data.zip'
 
 ### GETTING THE DATA
 getData(fileUrl,filename)
@@ -35,24 +32,24 @@ getData(fileUrl,filename)
 
 
 ### Reads activity labels
-activityLabels <- loadData('data/UCI HAR Dataset/activity_labels.txt')
+activityLabels <- loadData('UCI HAR Dataset/activity_labels.txt')
 activityLabels[,2] <- as.character(activityLabels[,2])
 colnames(activityLabels) <- c('id','activity_type')
 
 ### Reads the Feature
-features <- loadData('data/UCI HAR Dataset/features.txt')
+features <- loadData('UCI HAR Dataset/features.txt')
 features[,2] <- as.character(features[,2])
 colnames(features) <- c('id','feature_name')
 
 ### Reads the training set
-trainingSubject <- loadData('data/UCI HAR Dataset/train/subject_train.txt')
-trainingX <- loadData('data/UCI HAR Dataset/train/X_train.txt')
-trainingY <- loadData('data/UCI HAR Dataset/train/Y_train.txt')
+trainingSubject <- loadData('UCI HAR Dataset/train/subject_train.txt')
+trainingX <- loadData('UCI HAR Dataset/train/X_train.txt')
+trainingY <- loadData('UCI HAR Dataset/train/Y_train.txt')
 
 ### Reads the test set
-testSubject <- loadData('data/UCI HAR Dataset/test/subject_test.txt')
-testX <- loadData('data/UCI HAR Dataset/test/X_test.txt')
-testY <- loadData('data/UCI HAR Dataset/test/Y_test.txt')
+testSubject <- loadData('UCI HAR Dataset/test/subject_test.txt')
+testX <- loadData('UCI HAR Dataset/test/X_test.txt')
+testY <- loadData('UCI HAR Dataset/test/Y_test.txt')
 
 ### Merging the datasets into one big dataset named mergeData
 mergeTrain <- cbind(trainingSubject,trainingX,trainingY)
