@@ -18,3 +18,14 @@ Included in this repository are the following requirements:
 * CodeBook.md  - describes the variables and the data
 * run_analysis.R - merge, extract and clean the data
 * tidy_data.txt - result of the manipulations done by run_analysis.R
+
+## Creating the tidy_data.txt
+The step by step procedure in the dataset are the following:
+
+* Download the dataset
+* Read the datasets and load them in R
+* Merge the training and the test sets provided in the dataset into a dataset
+* Extract the variable measurement and get the Mean and Standard Deviation for each measurement variable.
+* Use descriptive Names for the activities of the dataset
+* Create another dataset from the first merged dataset with the average of each variable for each activity and each subject
+* Write the dataset to tidy_data.txt
